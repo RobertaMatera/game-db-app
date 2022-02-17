@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500&display=swap");
+
+html,
+body {
+  font-family: "Lexend", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  padding-top: 60px;
+  height: 100%;
+}

@@ -14,24 +14,29 @@
 </div>
 
 <div class="games">
-  <div class="game-box">
-    <div class="game-thumb-container">
-      <img
-        class="game-thumbnail"
-        src="../../../assets/images/final-fantasy-game.jpg"
-        alt="thumbnail"
-      />
-    </div>
-    <div class="game-description">
-      <p class="game-name">Game Name</p>
-      <div class="game-platforms">
+  <ng-container *ngFor="let game of games">
+    <div class="game-box">
+      <div class="game-thumb-container">
+        <!--if there is a background image img it'll be used as a source-->
         <img
-          class="game-platform"
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.downloadclipart.net%2Flarge%2Fxbox-png-picture.png&f=1&nofb=1"
-          alt="slug"
-          width="5%"
+          *ngIf="game.background_image"
+          class="game-thumbnail"
+          src="{{ game.background_image }}"
+          alt="thumbnail"
         />
+        <p *ngIf="!game.background_image">🔺oops! 😢 no image 😭</p>
+      </div>
+      <div class="game-description">
+        <p class="game-name">{{ game.name }}</p>
+        <div class="game-platforms">
+          <img
+            *ngFor="let gamePlatform of game.parent_platforms"
+            class="game-platform"
+            src="assets/images/platforms/{{ gamePlatform.platform.name }}.svg"
+            alt="{{ gamePlatform.platform.name }}"
+          />
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </div>

@@ -19,7 +19,7 @@
 
 <div class="games">
   <ng-container *ngFor="let game of games">
-    <div class="game-box">
+    <div class="game-box" (click)="openGameDetails(game.id)">
       <div class="game-thumb-container">
         <!--if there is a background image img it'll be used as a source-->
         <img

@@ -74,6 +74,9 @@
     height: 172px;
     color: var(--light-color);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-thumbnail {

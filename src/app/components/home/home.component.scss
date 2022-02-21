@@ -11,9 +11,20 @@
 
   .mat-form-field-infix {
     background-color: var(--light-color);
+    border-radius: 15px;
   }
 
   .mat-select-arrow {
+    color: var(--3rd-color);
+    &:hover {
+      color: var(--2nd-color);
+    }
+    &:active {
+      color: var(--2nd-color);
+    }
+  }
+
+  .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
     color: var(--3rd-color);
   }
 
@@ -35,6 +46,45 @@
 
   .mat-form-field-appearance-legacy .mat-form-field-underline {
     background-color: var(--light-color) !important;
+  }
+}
+
+::ng-deep {
+  mat-option .mat-option-text {
+    display: inline-block;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--dark-color);
+
+    &:hover {
+      color: var(--3rd-color);
+    }
+  }
+  mat-option:hover {
+    background-color: var(--light-color) !important;
+  }
+
+  mat-option:active {
+    background-color: var(--3rd-color) !important;
+    color: var(--dark-color) !important;
+  }
+
+  .mat-select-panel::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .mat-select-panel {
+    position: relative;
+    top: 7px;
+    left: 1px;
+    border-radius: 15px !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .mat-select-value {
+    color: var(--3rd-color) !important;
   }
 }
 

@@ -69,7 +69,7 @@
 
 ::ng-deep {
   mat-label {
-    color: var(--3rd-color);
+    color: var(--dark-color);
   }
 
   .mat-form-field-appearance-legacy .mat-form-field-wrapper {
@@ -82,12 +82,12 @@
   }
 
   .mat-select-arrow {
-    color: var(--3rd-color);
+    color: var(--dark-color);
     &:hover {
-      color: var(--2nd-color);
+      color: var(--3rd-color);
     }
     &:active {
-      color: var(--2nd-color);
+      color: var(--3rd-color);
     }
   }
 
@@ -129,7 +129,7 @@
     color: var(--dark-color);
 
     &:hover {
-      color: var(--3rd-color);
+      font-weight: 500;
     }
   }
   mat-option:hover {

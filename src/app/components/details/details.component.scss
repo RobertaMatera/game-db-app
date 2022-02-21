@@ -1,0 +1,106 @@
+.game-content {
+  background: rgb(54, 51, 51);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(54, 51, 51, 0.9920343137254902) 0%,
+    rgba(246, 233, 233, 0.14329481792717091) 100%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(54, 51, 51, 0.9920343137254902) 0%,
+    rgba(246, 233, 233, 0.14329481792717091) 100%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(54, 51, 51, 0.9920343137254902) 0%,
+    rgba(246, 233, 233, 0.14329481792717091) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#363333",endColorstr="#f6e9e9",GradientType=1);
+  padding: 3px;
+}
+
+.details-wrapper {
+  max-width: 900px;
+  margin: 20px auto;
+  position: relative;
+}
+
+/*
+::ng-deep gives us access to DOM elements, which are not in our component's HTML DOM.
+For example if we are using Angular Material(or any other third-part library) some generated elements are outside of our component's area and we can't access those elements directly or using a regular CSS way.
+*/
+.details {
+  ::ng-deep mwl-gauge {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+
+    /* The stroke-width property in CSS is for setting the width of a border on SVG shapes. */
+    .dial {
+      stroke-width: 10;
+    }
+
+    .value {
+      stroke-dasharray: none;
+      stroke-width: 10;
+    }
+
+    .value-text {
+      fill: var(--light-color);
+      font-weight: 700;
+      font-size: 24px;
+    }
+  }
+
+  .game-gauge {
+    position: absolute;
+    top: 50px;
+    right: 0;
+
+    &-label {
+      font-size: 20px;
+      color: var(--light-color);
+      position: relative;
+      bottom: 70px;
+    }
+  }
+}
+
+.game {
+  &-banner {
+    height: 442px;
+    overflow: hidden;
+
+    &-img {
+      width: 100%;
+      filter: blur(5px);
+    }
+  }
+
+  &-content {
+    text-align: center;
+    position: relative;
+    top: -200px;
+  }
+
+  &-header {
+    &-title {
+      font-size: 70px;
+      color: var(--3rd-color);
+      font-weight: 700;
+      line-height: 70px;
+      white-space: nowrap;
+    }
+
+    &-release-date {
+      color: var(--light-color);
+      font-weight: 500;
+    }
+
+    &-genres {
+      color: var(--light-color);
+      font-weight: 700;
+    }
+  }
+}

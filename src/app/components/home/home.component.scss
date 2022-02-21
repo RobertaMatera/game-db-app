@@ -28,6 +28,10 @@
     color: var(--3rd-color);
   }
 
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+  }
+
   .mat-select-value,
   .mat-form-field-hide-placeholder .mat-select-placeholder,
   .mat-form-field-appearence-legacy .mat-form-field-label {

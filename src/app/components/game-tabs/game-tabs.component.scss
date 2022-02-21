@@ -1,0 +1,72 @@
+.game {
+  &-tabs {
+    background-color: #2721213d;
+    color: var(--light-color);
+    text-align: left;
+    position: relative;
+    top: 11px;
+
+    &-par {
+      padding: 20px 20px 0 20px;
+      margin-bottom: 0;
+    }
+
+    &-link {
+      color: var(--light-color);
+    }
+
+    &-votes {
+      margin-left: 20px;
+      display: flex;
+
+      &-count {
+        margin-left: 5px;
+      }
+    }
+
+    ::ng-deep .mat-tab-labels {
+      justify-content: center;
+      background-color: var(--dark-color);
+    }
+  }
+
+  &-votes {
+    &-up {
+      color: #5ee432;
+      padding-left: 20px;
+    }
+    &-down {
+      color: #ef4655;
+    }
+
+    &-count {
+      margin-left: 5px;
+      margin-right: 10px;
+      vertical-align: super;
+    }
+  }
+
+  &-description {
+    padding: 20px;
+  }
+
+  &-screenshot {
+    margin-top: 5px;
+    width: calc(50% - 10px);
+
+    &:nth-child(even) {
+      margin-left: 10px;
+    }
+  }
+
+  &-trailer {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+::ng-deep {
+  .mat-tab-label .mat-tab-label-content {
+    color: var(--3rd-color);
+  }
+}

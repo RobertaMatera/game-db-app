@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { APIResponse, Game } from 'src/app/models';
-import { HttpService } from 'src/app/services/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,51 +9,16 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  public sort!: string;
-  public games!: Array<Game>;
-  private routeSub!: Subscription;
-  private gameSub!: Subscription;
 
   constructor(
-    private httpService: HttpService, //this is the service we've just created
-    private activatedRoute: ActivatedRoute, //this is a Angular service
     private router: Router
   ) {}
 
-   //this is the hook that runs the first when your component builds
    ngOnInit(): void {
-    // we use the activatedRoute.params to subscribe to this event
-    // this event returns the params which is the type of params
-    this.activatedRoute.params.subscribe((params: Params) => {
-      if (params['game-search']) {
-        this.searchGames('metacrit', params['game-search']);
-      } else {
-        this.searchGames('metacrit');
-      }
-    });
   }
-
-  searchGames(sort: string, search?: string): void {
-    this.gameSub = this.httpService
-      .getGameList(sort, search)
-      .subscribe((gameList: APIResponse<Game>) => {
-        this.games = gameList.results;
-        console.log(gameList);
-      });
-  }
-
-
 
   onSubmit(form: NgForm) {
     this.router.navigate(['search', form.value.search])
   }
 
-  ngOnDestroy(): void {
-    if (this.gameSub) {
-      this.gameSub.unsubscribe();
-    }
-    if (this.routeSub) {
-      this.routeSub.unsubscribe();
-    }
-  }
 }
